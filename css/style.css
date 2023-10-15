@@ -1,0 +1,733 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.container{
+    width: 80%;
+    margin: auto
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+    
+
+}
+html{
+    scroll-behavior: smooth;
+}
+/* start header */
+
+.header{
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    
+    position: fixed;
+    z-index:3
+}
+.logo{
+    float: left;
+    width: 25%;
+}
+
+.nav{
+    width: 75%;
+    float: right;
+    text-align: right;
+    margin-right: -50px;
+}
+.nav  li{
+    list-style: none;
+    display: inline-block;
+}
+.nav a{
+    text-decoration: none;
+    color: aliceblue;
+    padding: 10px 11px;
+    display: block;
+    text-transform: capitalize;
+    font-size: 15px;
+}
+
+.nav li a.active::after ,
+.nav li a::after{
+    content: "";
+    width: 0;
+    height: 3px;
+    display: block;
+    background-color: #085b9c;
+    margin-top: 3px;
+    transition: 0.5s;
+}
+.nav li a.active::after{
+    width: 100%;
+}
+.nav li a:hover::after{
+    width: 100%;
+}
+/* end header */
+/* start home page */
+.home{
+    background-image: url(../images/swimming-pool-beach-luxury-hotel-outdoor-pools-spa-amara-dolce-vita-luxury-hotel-resort-tekirova-kemer-turkey.jpg);
+    background-size: cover;
+    position: relative;
+    height: 100vh;
+}
+.home .overlay{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.home-content{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 70%;
+    color: white;
+    text-align: center;
+    
+}
+.home-title{
+    font-size: 50px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+.home-text{
+    color: beige;
+    margin-bottom: 20px;
+
+}
+.home .btn{
+    background-color: white;
+    min-width: 150px;
+    padding: 15px 0;
+    font-size: 17px;
+    border-radius: 7px;
+    text-transform: capitalize;
+    border: none;
+}
+.home .btn2{
+    background-color: #085b9c;
+    color: white;
+    margin-left: 20px;
+}
+.home .btn1:hover{
+    background-color: rgb(255, 255, 255);
+
+}
+.home .btn2:hover{
+    background-color: #052741;
+
+}
+
+/* end home page */
+
+/* start about */
+.about{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.about-content{
+    overflow: auto;
+}
+.about-card{
+    float: left;
+    position: relative;
+    border: solid 1.8px #858d96;
+    width: 30%;
+    padding: 30px 15px;
+    text-align: center;
+}
+.about-card i{
+    color: #0a95ff;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.about-card h2{
+    text-transform: capitalize;
+    margin-bottom: 10px;
+}
+.about-card p{
+    letter-spacing: 1.5;
+    color: #858d96;
+}
+.about-card a{
+    text-decoration: none;
+    color: #0a95ff;
+    text-transform: capitalize;
+}
+.about-card::before{
+    content:"" ;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: 1s;
+    background-color: rgb(43, 42, 42);
+    width: 0;
+    height: 0;
+}
+.about-card:hover::before{
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.about-card:hover h2
+{
+    color: white;
+    transition: 1s;
+}
+.about-card:hover p{
+    color: rgb(212, 208, 208);
+    transition: 1s;
+}
+/* end about */
+
+/* start rooms */
+.rooms{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: #e5e2e2;
+}
+.title-heading{
+    text-align: center;
+    
+}
+.title-heading h2{
+    text-transform: capitalize;
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+.title-heading .line-heading{
+    width: 70px;
+    height: 3px;
+    background-color: #085b9c;
+    margin: 0px auto 60px;
+}
+.room-content{
+    overflow: hidden;
+}
+.room-card{
+    width: 30%;
+    position: relative;
+    margin-bottom: 30px;
+    float: left;
+    padding: 20px;
+    height: 250px;
+}
+.mar{
+    margin-left:5%;
+    margin-right:5%;
+}
+
+.room-card img{
+    width: 100%;
+    height: 100%;
+}
+.room-layout{
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: 1s;
+    visibility: hidden;
+}
+.room-card:hover .room-layout{
+    opacity: 1;
+    visibility: visible;
+}
+.room-info{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    
+}
+.room-info span{
+    color: #0a95ff;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+.room-info h3{
+    color: white;
+    text-transform: uppercase;
+    font-size: 19px;
+}
+.room-content a{
+    width: 40px;
+    height: 40px;
+    position: relative;
+    background-color: #0a95ff;
+    display: inline-block;
+    
+
+}
+.room-content i{
+    line-height: 40px;
+}
+
+/* end rooms */
+/* start offer */
+.offer{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.offer-content{
+    overflow: auto;
+}
+.offer-card{
+    width: 30%;
+    border: solid 0.8px #858d96;
+    float: left;
+    margin-bottom: 20px;
+    padding: 30px 15px 30px 65px;
+    position: relative;
+}
+.offer-card i{
+    font-size: 30px;
+    color: #0a95ff;
+    position: absolute;
+    left: 15px;
+    top: 32px;
+}
+.offer-card h2{
+    text-transform: capitalize;
+    margin-bottom: 20px;
+    transition: 1s;
+}
+.offer-card p{
+    text-transform: capitalize;
+    margin-bottom: 15px;
+    color: #858d96;
+    line-height: 1.5;
+    transition: 1s;
+}
+.offer-card::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    background-color: rgb(43, 42, 42);
+    transition: 1s;
+    z-index: -1;
+    
+    }
+.offer-card:hover::before{
+    width: 100%;
+    height: 100%;
+}
+.offer-card:hover h2{
+    color: white;
+}
+.offer-card:hover p{
+    color: rgb(153, 152, 152);
+}
+/* end offer */
+
+/* start choose */
+.choose{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: #e5e2e2;
+}
+
+.choose .choose-content{
+    overflow: hidden;
+}
+.choose .choose-item{
+    float: left;
+    width: 50%;
+}
+.choose .choose-item .title-heading{
+    text-align: left;
+    
+}
+.choose .choose-item .line-heading{
+    margin: 0px 0px 60px;
+    
+}
+.choose-item p{
+    margin-bottom: 20px;
+    padding-right: 20px;
+}
+.choose-list li {
+    color: #858d96;
+}
+.choose-list li i{
+    color: #0a95ff;
+font-size: 25px;
+}
+.choose-image img{
+    width: 500px;
+    height: 400px;
+}
+.choose-content ul{
+    list-style: none;
+}
+.choose-bullets li{
+    display: inline-block;
+    
+    width: 10px;
+    height: 10px;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+.choose-bullets {
+    text-align: center;
+}
+.choose-bullets li.active{
+    background-color: #0a95ff;  
+    border-color: #0a95ff;
+}
+.choose-bullets li:hover{
+    background-color: #0a95ff;
+    border-color: #0a95ff;
+}
+/* end choose */
+
+/* start numbers */
+.numbers{
+    position: relative;
+    background-image: url(../images/bed-near-swimming-pool-beach.jpg);
+    height: 400px;
+    background-size: cover;
+    background-attachment: fixed;
+    
+}
+.numbers .overlay{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.numbers .number-content{
+    padding-top: 160px;
+    overflow: auto;
+}
+.number-item{
+    float: left;
+    width: 25%;
+    text-align: center;
+}
+.number-item i{
+    font-size: 30px;
+    color: #0a95ff;
+    margin-bottom: 10px;
+}
+.number-item h3{
+    color: white;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+.number-item span{
+    color: rgb(236, 235, 235);
+}
+/* end numbers */
+
+/* start pricing */
+.pricing{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: #DEEFE7;
+}
+.pricing-cotent{
+    overflow: hidden;
+}
+.pricing-card{
+    float: left;
+    border: solid 1px #858d96;
+    width: 30%;
+    text-align: center;
+    padding: 30px 15px;
+    position: relative;
+    color: #858d96;
+}
+.pricing-card:before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0;
+    background-color:  rgb(43, 42, 42);
+    left: 0;
+    top: 0;
+    transition: 1s;
+    opacity: 0.5;
+}
+
+.pricing-card:hover h4,
+.pricing-card:hover .price{
+    color: red;
+    transition: 1s;
+}
+.pricing-card:hover::before{
+    height: 100%;
+    width: 100%;
+}
+
+.pricing-card h4{
+    text-transform: uppercase;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+
+.pricing-card .price{
+    color: black;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: solid 1px #159A9C;
+    margin: 20px auto ;
+    padding: 10px 0;
+    
+}
+
+.pricing-card .description{
+    list-style: none;
+}
+.description li{
+    margin-bottom: 5px;
+    line-height: 1.8;
+}
+.s1{
+    font-weight: bold;
+    font-size: 35px;
+}
+.s2{
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.pricing-card a{
+    text-decoration: none;
+    color: #178b8d;
+    border: solid 1px #159A9C;
+    padding: 0px 30px;
+    margin-top: 15px;
+}
+.pricing-card a:hover{
+    background-color: #159A9C;
+    color: white;
+}
+/* end pricing */
+
+/* Start testi */
+.testi{
+    position: relative;
+    height: 350px;
+    background-image: url(../images/effect-beach-travel-luxury-vintage.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+.testi .overlay{
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+}
+.testi-content{
+    overflow: hidden;
+    width: 90%;
+    margin: auto;
+}
+.testi-item{
+    float: left;
+    width: 50%;
+    color: white;
+    margin-bottom: 110px;
+    padding-right: 20px;
+    padding-top: 55px;
+}
+.testi-jop{
+    position: relative;
+    margin-bottom: 20px;
+    padding: 90px 20px 10px 150px;
+    line-height: 1.4;
+}
+.testi-jop img{
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    top: 71px;
+    left: 65;
+}
+.testi-jop span{
+    color: rgb(0, 153, 255);
+}
+.testi-desc{
+    text-transform: capitalize;
+    margin-left: 76px;
+    line-height: 1.5;
+    font-size: 14px;
+}
+/* End testi */
+
+/* start team */
+.team{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.team-content{
+    overflow: hidden;
+    padding-left: 6%;
+
+}
+.team-card{
+    
+    display: block;
+    width: 28%;
+    background-color: rgb(177, 172, 172);
+    float: left;
+    padding: 12px 20px;
+    position: relative;
+
+}
+.team-card::before{
+    content:"";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    opacity: 0;
+}
+.team-card:hover:before{
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+    transition: 1s;
+}
+.team-card .team-image img{
+    width: 100%;
+    
+}
+.team-image{
+    position: relative;
+}
+.team-overlay{
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    opacity: 0;
+    color: white;
+}
+.team-card:hover .team-overlay{
+    visibility: visible;
+    opacity: 1;
+}
+.team-overlay a{
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-color: #3d6ff8;
+    color: white;
+    margin-left: auto;
+    text-align: center;
+}
+.team-overlay a i{
+    line-height: 45px;
+
+}
+.team-info{
+    text-align: center;
+}
+.team-card .team-info h3{
+    padding: 10px 0;
+}
+.team-card:hover .team-info h3{
+    color: #DEEFE7;
+    transition: 1s;
+
+}
+.team-card span{
+    color: #636669;
+    text-transform: uppercase;
+}
+.team-card:hover .team-card span{
+    color: rgb(0, 47, 255);
+    transition: 1s;
+}
+
+/* end team */
+/* start footer */
+.footer{
+    
+    background-color: #332d2d;
+    text-align: center;
+}
+.footer p{
+    background-color: #292424;
+    padding: 20px  10px;
+
+}
+.footer-content{
+    padding:70px 0;
+
+}
+.footer ul{
+    list-style: none;
+}
+.footer ul li{
+    display:inline-block;
+    margin-left: 10px;
+    
+}
+.footer ul li a {
+    display: block;
+    color: white;
+    font-size: 20px;
+    border: 1px solid white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding-top: 10px;
+    transition: 1s;
+}
+.a1:hover{
+    background-color: #3d6ff8;
+}
+.a2:hover{
+    background-color: #3db4f8;
+}
+.a3:hover{
+    background-color: red;
+}
+.a4:hover{
+    background-color: #4b72dd;
+}
+.a5:hover{
+    background-color: #ff0095;
+}
+.a6:hover{
+    background-color: rgb(212, 60, 60);
+}
+.footer p{
+    color: white;
+    font-size: 18px;
+}
+
+/* end footer */
+
